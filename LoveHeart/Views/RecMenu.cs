@@ -20,6 +20,8 @@ namespace LoveHeart.Views
             Console.WriteLine("----------------------------");
             Console.WriteLine("4. Registry appointment");
             Console.WriteLine("5. List appointments");
+            Console.WriteLine("----------------------------");
+            
             Console.WriteLine();
             Console.WriteLine("E. Logout and exit");
 
@@ -28,7 +30,7 @@ namespace LoveHeart.Views
             switch (thePick)
             {
                 case '1': RecRegisterView.View(); break;
-                case '2': Console.WriteLine("search"); break;
+                case '2': SearchView.Search(); break;
                 case '3': RecListCustomerView.listView(); break;
                 case '4': RecRegAppointment.addAppointment(); break;
                 case '5': RecAppointmentSchema.view(); break;

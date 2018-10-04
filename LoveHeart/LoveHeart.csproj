@@ -63,6 +63,7 @@
     <Compile Include="Views\RecRegAppointment.cs" />
     <Compile Include="Views\RecRegisterPetView.cs" />
     <Compile Include="Views\RecRegisterView.cs" />
+    <Compile Include="Views\SearchView.cs" />
     <Compile Include="Views\VetMenu.cs" />
   </ItemGroup>
   <ItemGroup>
