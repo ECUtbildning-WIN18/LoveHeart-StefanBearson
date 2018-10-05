@@ -24,7 +24,7 @@ namespace LoveHeart.Views
                 }
             }
             Console.ReadKey();
-            RecMenu.menuView();
+            RecMenu.MenuView();
         }
     }
 }

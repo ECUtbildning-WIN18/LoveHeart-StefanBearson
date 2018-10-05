@@ -25,8 +25,6 @@ namespace LoveHeart
             
             VetInitDB.AddVets();
             AppointmentInitDB.add();
-            Thread escToQuit = new Thread(Tools.EscToQuit);
-            escToQuit.Start();
             LogIn.View();
         }
     }

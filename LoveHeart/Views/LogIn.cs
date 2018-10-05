@@ -52,10 +52,7 @@ namespace LoveHeart.Views
 
                         Tools.WriteAt(8,8, $"{userName}",ConsoleColor.Blue);
                         Tools.WriteAt(" wants to log in!");
-                        Tools.WriteAt(8, 10, $"Is this correct? ");
-                        Tools.WriteAt("(Y)es ", ConsoleColor.DarkGreen);
-                        Tools.WriteAt("(N)o", ConsoleColor.DarkRed);
-                        Console.SetCursorPosition(8, 12);
+                        Tools.IsThisCorrectText();
                         char correct = Console.ReadKey().KeyChar;
                         if (correct == 'y' || correct == 'Y')
                         {
@@ -66,7 +63,7 @@ namespace LoveHeart.Views
                             }
                             else if (Program.users[userName].UserRole == "rec")
                             {
-                                RecMenu.menuView();
+                                RecMenu.MenuView();
                             }
                             else if (Program.users[userName].UserRole == "admin")
                             {

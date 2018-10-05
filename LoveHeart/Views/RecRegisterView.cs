@@ -23,10 +23,7 @@ namespace LoveHeart.Views
             string lastName = Console.ReadLine();
             Console.Write("Social Security Number (yymmdd-xxxx): ");
             string socialSecutityNumber = Console.ReadLine();
-            Tools.WriteAt(8, 10, $"Is this correct? ");
-            Tools.WriteAt("(Y)es ", ConsoleColor.DarkGreen);
-            Tools.WriteAt("(N)o", ConsoleColor.DarkRed);
-            Console.SetCursorPosition(8, 12);
+            Tools.IsThisCorrectText();
             char correct = Console.ReadKey().KeyChar;
             if (correct == 'y' || correct == 'Y')
             {
@@ -47,7 +44,7 @@ namespace LoveHeart.Views
             }
             else
             {
-                RecMenu.menuView();
+                RecMenu.MenuView();
             }
         }
     }

@@ -40,7 +40,7 @@ namespace LoveHeart.Views
                     foreach (var vet in Program.vets)
                     {
                         vet.schedule.Add(dateTime, petName);
-                        RecMenu.menuView();
+                        RecMenu.MenuView();
                     }
                 }
             }
@@ -52,7 +52,7 @@ namespace LoveHeart.Views
                 addAppointment();
             }
             Console.ReadKey();
-            RecMenu.menuView();
+            RecMenu.MenuView();
         }
 
         public static void ListVets()

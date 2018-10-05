@@ -8,7 +8,7 @@ namespace LoveHeart.Views
 {
     class RecMenu
     {
-        public static void menuView()
+        public static void MenuView()
         {
             Console.Clear();
             HeaderView.Header();
@@ -35,7 +35,7 @@ namespace LoveHeart.Views
                 case '5': RecAppointmentSchema.view(); break;
                 case 'E':
                 case 'e': LogIn.View(); break;
-                default: Console.WriteLine("try again!"); break;
+                default: MenuView(); break;
             }
             Console.ReadKey();
         }

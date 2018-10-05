@@ -43,5 +43,13 @@ namespace LoveHeart.Actions
             }
             Environment.Exit(0);
         }
+
+        public static void IsThisCorrectText()
+        {
+            Tools.WriteAt(8, 10, $"Is this correct? ");
+            Tools.WriteAt("(Y)es ", ConsoleColor.DarkGreen);
+            Tools.WriteAt("(N)o", ConsoleColor.DarkRed);
+            Console.SetCursorPosition(8, 12);
+        }
     }
 }

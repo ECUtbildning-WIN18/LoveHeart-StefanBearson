@@ -27,7 +27,7 @@ namespace LoveHeart.Views
                     Console.WriteLine($"\t{customer.Name}, {customer.NickName} is a {customer.TypeOfAnimal}");
                 }
                 Console.ReadKey();
-                RecMenu.menuView();
+                RecMenu.MenuView();
             }
             else
             {

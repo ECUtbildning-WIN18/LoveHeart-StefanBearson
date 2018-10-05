@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LoveHeart.Actions;
 using LoveHeart.Domain;
 
 namespace LoveHeart.Views
@@ -16,24 +17,23 @@ namespace LoveHeart.Views
             FooterView.Footer();
             Console.WriteLine("Adding a pet");
             Console.WriteLine();
-            Console.WriteLine($"Owner: {petowner.FirstName} {petowner.LastName}");
+            Console.Write($"Owner: {petowner.FirstName} {petowner.LastName}");
             Console.WriteLine("Pet information");
             Console.WriteLine();
-            Console.WriteLine("Name:");
+            Console.Write("Name:");
             string name = Console.ReadLine();
-            Console.WriteLine("Nickname:");
+            Console.Write("Nickname:");
             string nickname = Console.ReadLine();
-            Console.WriteLine("Type of animal:");
+            Console.Write("Type of animal:");
             string typeOfAnimal = Console.ReadLine();
             Console.WriteLine("Date of birth (yyyy-mm-dd):");
             DateTime birthdate = Convert.ToDateTime(Console.ReadLine());
-            Console.WriteLine();
-            Console.WriteLine("Is this correct? (Y)es (N)o");
+            Tools.IsThisCorrectText();
             char correct = Console.ReadKey().KeyChar;
             if (correct == 'y' || correct == 'Y')
             {
                 petowner.OwnerAnimals.Add(new Pet(name,nickname, typeOfAnimal, birthdate));
-                RecMenu.menuView();
+                RecMenu.MenuView();
             }
             else
             {
