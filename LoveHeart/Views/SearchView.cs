@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LoveHeart.Actions;
 
 namespace LoveHeart.Views
 {
@@ -13,24 +14,38 @@ namespace LoveHeart.Views
             Console.Clear();
             HeaderView.Header();
             FooterView.Footer();
-            Console.WriteLine("# Search customer");
-            Console.WriteLine();
-            Console.WriteLine("Search social security number (yymmdd-xxxx)");
+            Tools.WriteAt(Config.fromBorder, 4, "Search customer");
+            
+            Tools.WriteAt(Config.fromBorder, 6, "Search social security number (yymmdd-xxxx)");
+            Tools.WriteAt(Config.fromBorder, 8, "yymmdd-xxxx");
+            Console.SetCursorPosition(Config.fromBorder, 8);
+
             string ssn = Console.ReadLine();
-            Console.WriteLine();
+            
             if (Program.customers.ContainsKey(ssn))
             {
-                Console.WriteLine($"{Program.customers[ssn].FirstName} {Program.customers[ssn].LastName}: {Program.customers[ssn].SocialSecurityNumber}");
-                Console.WriteLine("\tPets:");
+                Console.Clear();
+                HeaderView.Header();
+                FooterView.Footer();
+                Tools.WriteAt(Config.fromBorder, 4, $"{Program.customers[ssn].FirstName} {Program.customers[ssn].LastName}: {Program.customers[ssn].SocialSecurityNumber}");
+                Tools.WriteAt(Config.fromBorder, 5, $"\tPets:");
+
+
+                int row = 0;
                 foreach (var customer in Program.customers[ssn].OwnerAnimals)
                 {
-                    Console.WriteLine($"\t{customer.Name}, {customer.NickName} is a {customer.TypeOfAnimal}");
+                    Tools.WriteAt(Config.fromBorder, 6 + row, $"\t{customer.Name}, {customer.NickName} is a {customer.TypeOfAnimal}", ConsoleColor.Blue);
+                    row++;
                 }
+                Tools.WriteAt(Config.fromBorder, 8 + row, $"Press any key to continue...", ConsoleColor.DarkRed);
                 Console.ReadKey();
                 RecMenu.MenuView();
             }
             else
             {
+                Tools.WriteAt(Config.fromBorder, 10, "Custemor not found!", ConsoleColor.DarkRed);
+                Tools.WriteAt(Config.fromBorder, 11, "Press any key...", ConsoleColor.DarkRed);
+                Console.ReadKey();
                 Search();
             }
         }

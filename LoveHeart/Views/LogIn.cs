@@ -30,10 +30,12 @@ namespace LoveHeart.Views
                     if (Program.users.Any(entry => entry.Key == userName && entry.Value.Password == password))
                     {
                         Console.Clear();
+                        Console.CursorVisible = false;
                         Tools.WriteAt(Config.fromBorder ,4, $"{userName}",ConsoleColor.Blue);
                         Tools.WriteAt(" wants to log in!");
                         Tools.IsThisCorrectText();
                         char correct = Console.ReadKey().KeyChar;
+                        Console.CursorVisible = true;
                         if (correct == 'y' || correct == 'Y')
                         {
                             userLogdIn = userName;

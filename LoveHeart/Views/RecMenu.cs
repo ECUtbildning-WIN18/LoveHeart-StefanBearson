@@ -14,6 +14,7 @@ namespace LoveHeart.Views
             Console.Clear();
             HeaderView.Header();
             FooterView.Footer();
+            Console.CursorVisible = false;
             Tools.WriteAt(Config.fromBorder,4, "Receptionist Menu");
             Tools.WriteAt(Config.fromBorder, 6, "1. Register new custemer");
             Tools.WriteAt(Config.fromBorder, 7, "2. Search custemer");
@@ -23,7 +24,7 @@ namespace LoveHeart.Views
             Tools.WriteAt(Config.fromBorder, 13, "E. Logout and exit");
             
             Char thePick = Console.ReadKey().KeyChar;
-
+            Console.CursorVisible = true;
             switch (thePick)
             {
                 case '1': RecRegisterView.View(); break;
