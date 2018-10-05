@@ -22,10 +22,8 @@ namespace LoveHeart.Views
             Console.WriteLine("4. Registry appointment");
             Console.WriteLine("5. List appointments");
             Console.WriteLine("----------------------------");
-            
             Console.WriteLine();
             Console.WriteLine("E. Logout and exit");
-
             Char thePick = Console.ReadKey().KeyChar;
 
             switch (thePick)
@@ -38,10 +36,7 @@ namespace LoveHeart.Views
                 case 'E':
                 case 'e': LogIn.View(); break;
                 default: Console.WriteLine("try again!"); break;
-                    
             }
-                 
-
             Console.ReadKey();
         }
     }

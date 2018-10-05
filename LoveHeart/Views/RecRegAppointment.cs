@@ -43,7 +43,6 @@ namespace LoveHeart.Views
                         RecMenu.menuView();
                     }
                 }
-
             }
             else
             {
@@ -52,10 +51,6 @@ namespace LoveHeart.Views
                 Console.ReadKey();
                 addAppointment();
             }
-            
-
-
-            
             Console.ReadKey();
             RecMenu.menuView();
         }

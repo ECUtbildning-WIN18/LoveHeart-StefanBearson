@@ -22,9 +22,5 @@ namespace LoveHeart.Domain
             Program.customers.Add(po4.SocialSecurityNumber, po4);
             Program.customers.Add(po5.SocialSecurityNumber, po5);
         }
-        
-
-        
-
     }
 }

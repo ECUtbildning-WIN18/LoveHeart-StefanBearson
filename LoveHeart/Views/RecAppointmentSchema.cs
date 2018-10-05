@@ -21,12 +21,10 @@ namespace LoveHeart.Views
                 Console.WriteLine("--------------------------------------");
                 foreach (var t in vets.schedule)
                 {
-                    
                     Console.WriteLine($"{t.Key} : {t.Value}");
                 }
                 Console.WriteLine("######################################");
                 Console.WriteLine();
-                
             }
             Console.ReadKey();
             RecMenu.menuView();

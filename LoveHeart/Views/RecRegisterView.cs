@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LoveHeart.Actions;
 using LoveHeart.Domain;
 
 namespace LoveHeart.Views
@@ -22,8 +23,10 @@ namespace LoveHeart.Views
             string lastName = Console.ReadLine();
             Console.Write("Social Security Number (yymmdd-xxxx): ");
             string socialSecutityNumber = Console.ReadLine();
-
-            Console.WriteLine("Is this correct? (Y)es (N)o");
+            Tools.WriteAt(8, 10, $"Is this correct? ");
+            Tools.WriteAt("(Y)es ", ConsoleColor.DarkGreen);
+            Tools.WriteAt("(N)o", ConsoleColor.DarkRed);
+            Console.SetCursorPosition(8, 12);
             char correct = Console.ReadKey().KeyChar;
             if (correct == 'y' || correct == 'Y')
             {

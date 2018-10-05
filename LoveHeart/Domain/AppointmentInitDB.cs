@@ -10,10 +10,8 @@ namespace LoveHeart.Domain
     {
         public static void add()
         {
-            //vet.schedule.Add(dateTime, petName);
             foreach (var vet in Program.vets)
             {
-                
                 if (vet.VetId == "0001")
                 {
                     vet.schedule.Add(new DateTime(2018,09,09,14,00,00), "Pelle" );
@@ -31,7 +29,7 @@ namespace LoveHeart.Domain
                 }
                 else
                 {
-                    
+                    Console.WriteLine("Nothing else...");
                 }
             }
         }

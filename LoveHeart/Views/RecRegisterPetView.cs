@@ -14,8 +14,6 @@ namespace LoveHeart.Views
             Console.Clear();
             HeaderView.Header();
             FooterView.Footer();
-
-            //petowner.OwnerAnimals.Add(new Pet("test", "test", DateTime.MinValue));
             Console.WriteLine("Adding a pet");
             Console.WriteLine();
             Console.WriteLine($"Owner: {petowner.FirstName} {petowner.LastName}");
@@ -41,9 +39,6 @@ namespace LoveHeart.Views
             {
                 PetRegView(petowner);
             }
-
-
-
                 Console.ReadKey();
         }
     }

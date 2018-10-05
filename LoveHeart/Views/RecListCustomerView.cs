@@ -23,11 +23,8 @@ namespace LoveHeart.Views
                     Console.WriteLine($"\t\t{pet.Name}, and that thing is a {pet.TypeOfAnimal}");
                 }
             }
-
             Console.ReadKey();
-            
             RecMenu.menuView();
-
         }
     }
 }

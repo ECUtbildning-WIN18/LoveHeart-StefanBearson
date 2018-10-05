@@ -17,12 +17,8 @@ namespace LoveHeart.Views
             Console.SetBufferSize(70, 20);
             Console.SetCursorPosition(0,18);
             Console.WriteLine($"##############################################| Esc : QUIT |###");
-            
-
-
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(0,2);
-            
         }
     }
 }
