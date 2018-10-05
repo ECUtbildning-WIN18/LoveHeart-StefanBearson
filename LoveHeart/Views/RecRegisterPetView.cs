@@ -36,7 +36,7 @@ namespace LoveHeart.Views
             Console.ForegroundColor = ConsoleColor.Blue;
             DateTime birthdate = Convert.ToDateTime(Console.ReadLine());
             Console.ForegroundColor = ConsoleColor.White;
-            Tools.IsThisCorrectText();
+            Tools.IsThisCorrectTextLower();
             char correct = Console.ReadKey().KeyChar;
 
             if (correct == 'y' || correct == 'Y')

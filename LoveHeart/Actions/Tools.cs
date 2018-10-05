@@ -46,10 +46,18 @@ namespace LoveHeart.Actions
 
         public static void IsThisCorrectText()
         {
-            Tools.WriteAt(8, 10, $"Is this correct? ");
+            Tools.WriteAt(Config.fromBorder, 10, $"Is this correct? ");
             Tools.WriteAt("(Y)es ", ConsoleColor.DarkGreen);
             Tools.WriteAt("(N)o", ConsoleColor.DarkRed);
             Console.SetCursorPosition(8, 12);
+        }
+
+        public static void IsThisCorrectTextLower()
+        {
+            Tools.WriteAt(Config.fromBorder, 14, $"Is this correct? ");
+            Tools.WriteAt("(Y)es ", ConsoleColor.DarkGreen);
+            Tools.WriteAt("(N)o", ConsoleColor.DarkRed);
+            Console.SetCursorPosition(8, 16);
         }
     }
 }

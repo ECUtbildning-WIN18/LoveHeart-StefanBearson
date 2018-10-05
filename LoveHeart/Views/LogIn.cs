@@ -30,7 +30,7 @@ namespace LoveHeart.Views
                     if (Program.users.Any(entry => entry.Key == userName && entry.Value.Password == password))
                     {
                         Console.Clear();
-                        Tools.WriteAt(8,8, $"{userName}",ConsoleColor.Blue);
+                        Tools.WriteAt(Config.fromBorder ,4, $"{userName}",ConsoleColor.Blue);
                         Tools.WriteAt(" wants to log in!");
                         Tools.IsThisCorrectText();
                         char correct = Console.ReadKey().KeyChar;
@@ -51,13 +51,13 @@ namespace LoveHeart.Views
                             }
                             else
                             {
-                                Tools.WriteAt(2, 8, $"Wrong User role", ConsoleColor.Red);
+                                Tools.WriteAt(Config.fromBorder, 8, $"Wrong User role", ConsoleColor.Red);
                                 Console.ReadKey();
                             }
                         }
                         else
                         {
-                            Tools.WriteAt(2,8,$"Login failed, please try again", ConsoleColor.Red);
+                            Tools.WriteAt(Config.fromBorder, 8,$"Login failed, please try again", ConsoleColor.Red);
                             Console.ReadKey();
                             View();
                         }
@@ -67,9 +67,9 @@ namespace LoveHeart.Views
                         Console.Clear();
                         HeaderView.Header();
                         FooterView.Footer();
-                        Tools.WriteAt(2, 8, $"Wrong Password", ConsoleColor.Red);
-                        Tools.WriteAt(2, 10, $"You have {3 - trys} left!", ConsoleColor.Red);
-                        Tools.WriteAt(2, 12, $"Password: ", ConsoleColor.Red);
+                        Tools.WriteAt(Config.fromBorder, 8, $"Wrong Password", ConsoleColor.Red);
+                        Tools.WriteAt(Config.fromBorder, 10, $"You have {3 - trys} left!", ConsoleColor.Red);
+                        Tools.WriteAt(Config.fromBorder, 12, $"Password: ", ConsoleColor.Red);
                         password = SecretPassword.EnterPassword();
                         trys++;
                     }
@@ -77,7 +77,7 @@ namespace LoveHeart.Views
                 Console.Clear();
                 HeaderView.Header();
                 FooterView.Footer();
-                Tools.WriteAt(2, 8, $"Contact Admin for support!", ConsoleColor.Red);
+                Tools.WriteAt(Config.fromBorder, 8, $"Contact Admin for support!", ConsoleColor.Red);
                 Console.ReadKey();
                 View();
             }
@@ -86,7 +86,7 @@ namespace LoveHeart.Views
                 Console.Clear();
                 HeaderView.Header();
                 FooterView.Footer();
-                Tools.WriteAt(2, 8, $"User dont exist! Try Again...", ConsoleColor.Red);
+                Tools.WriteAt(Config.fromBorder, 8, $"User dont exist! Try Again...", ConsoleColor.Red);
                 Console.ReadKey();
                 View();
             }
