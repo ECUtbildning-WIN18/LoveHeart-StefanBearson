@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actions\SecretPassword.cs" />
+    <Compile Include="Actions\Tools.cs" />
     <Compile Include="Domain\AppointmentInitDB.cs" />
     <Compile Include="Domain\Pet.cs" />
     <Compile Include="Domain\PetInitDB.cs" />
