@@ -14,7 +14,7 @@ namespace LoveHeart.Views
         {
             Console.Clear();
             HeaderView.Header();
-            Console.WriteLine();
+            FooterView.Footer();
             Console.WriteLine("Register Appointment");
             Console.WriteLine();
             Console.WriteLine("Pet name:");

@@ -12,7 +12,7 @@ namespace LoveHeart.Views
         {
             Console.Clear();
             HeaderView.Header();
-            Console.WriteLine();
+            FooterView.Footer();
             foreach (var customer in Program.customers)
             {
                 Console.WriteLine($"{customer.Value.FirstName} {customer.Value.LastName} - {customer.Value.SocialSecurityNumber}");

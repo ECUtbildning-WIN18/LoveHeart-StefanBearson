@@ -13,7 +13,8 @@ namespace LoveHeart.Views
         {
             Console.Clear();
             HeaderView.Header();
-            Console.WriteLine();
+            FooterView.Footer();
+
             //petowner.OwnerAnimals.Add(new Pet("test", "test", DateTime.MinValue));
             Console.WriteLine("Adding a pet");
             Console.WriteLine();

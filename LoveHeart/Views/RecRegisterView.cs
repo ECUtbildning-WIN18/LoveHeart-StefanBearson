@@ -13,7 +13,7 @@ namespace LoveHeart.Views
         {
             Console.Clear();
             HeaderView.Header();
-            Console.WriteLine();
+            FooterView.Footer();
             Console.WriteLine("# Register new customer");
             Console.WriteLine();
             Console.Write("First name: ");

@@ -12,7 +12,7 @@ namespace LoveHeart.Views
         {
             Console.Clear();
             HeaderView.Header();
-            Console.WriteLine();
+            FooterView.Footer();
             Console.WriteLine("# Search customer");
             Console.WriteLine();
             Console.WriteLine("Search social security number (yymmdd-xxxx)");

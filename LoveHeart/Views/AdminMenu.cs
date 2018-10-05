@@ -12,6 +12,7 @@ namespace LoveHeart.Views
         {
             Console.Clear();
             HeaderView.Header();
+            FooterView.Footer();
             Console.WriteLine();
             Console.WriteLine("admin menu");
             Console.ReadKey();

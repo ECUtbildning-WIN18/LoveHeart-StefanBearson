@@ -12,7 +12,7 @@ namespace LoveHeart.Views
         {
             Console.Clear();
             HeaderView.Header();
-            Console.WriteLine();
+            FooterView.Footer();
             Console.WriteLine("vet menu");
             Console.ReadKey();
         }
