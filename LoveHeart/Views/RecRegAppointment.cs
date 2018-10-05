@@ -12,6 +12,7 @@ namespace LoveHeart.Views
     {
         public static void addAppointment()
         {
+            //TODO: Console.WriteLine to Tools.WriteAt...
             Console.Clear();
             HeaderView.Header();
             FooterView.Footer();
@@ -19,37 +20,52 @@ namespace LoveHeart.Views
             Console.WriteLine();
             Console.WriteLine("Pet name:");
             string petName = Console.ReadLine();
-            //add check if per exist
-            ListVets();
-            Console.WriteLine("Veterainarian (first name): ");
-            string vetName = Console.ReadLine();
-            //var myKey = types.FirstOrDefault(x => x.Value == "one").Key;
-            string vetId = Program.vets.FirstOrDefault(name => name.FirstName == vetName).VetId;
-            if (Program.vets.Any(vet => vet.FirstName == vetName))
+
+            if (Program.customers.Any(custemor => custemor.Value.OwnerAnimals.Any(pet => pet.Name.Contains(petName))))
             {
-                Console.WriteLine("Date (yyyy-mm-dd hh:mm):");
-                DateTime dateTime = Convert.ToDateTime(Console.ReadLine());
-                if (Program.vets.Any(time => time.schedule.ContainsKey(dateTime)))
+                Console.WriteLine("Reason:");
+                string addNote = Console.ReadLine();
+                ListVets();
+                Console.WriteLine("Veterainarian (first name): ");
+                string vetName = Console.ReadLine();
+                //var myKey = types.FirstOrDefault(x => x.Value == "one").Key;
+                string vetId = Program.vets.FirstOrDefault(name => name.FirstName == vetName).VetId;
+                if (Program.vets.Any(vet => vet.FirstName == vetName))
                 {
-                    Console.Clear();
-                    Console.WriteLine("Not free!");
-                    Console.ReadKey();
+                    Console.WriteLine("Date (yyyy-mm-dd hh:mm):");
+                    DateTime dateTime = Convert.ToDateTime(Console.ReadLine());
+                    if (Program.vets.Any(time => time.schedule.ContainsKey(dateTime)))
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Not free!");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        foreach (var vet in Program.vets)
+                        {
+                            foreach (var owner in Program.customers.Values)
+                            {
+                                foreach (var pet in owner.OwnerAnimals)
+                                {
+                                    if (pet.Name == petName)
+                                    {
+                                        pet.Notes.Add(addNote);
+                                    }
+                                }
+                            }
+                            vet.schedule.Add(dateTime, petName);
+                            RecMenu.MenuView();
+                        }
+                    }
                 }
                 else
                 {
-                    foreach (var vet in Program.vets)
-                    {
-                        vet.schedule.Add(dateTime, petName);
-                        RecMenu.MenuView();
-                    }
+                    Console.Clear();
+                    Console.WriteLine("Vet do not exist");
+                    Console.ReadKey();
+                    addAppointment();
                 }
-            }
-            else
-            {
-                Console.Clear();
-                Console.WriteLine("Vet do not exist");
-                Console.ReadKey();
-                addAppointment();
             }
             Console.ReadKey();
             RecMenu.MenuView();

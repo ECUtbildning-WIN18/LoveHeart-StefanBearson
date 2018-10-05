@@ -26,6 +26,11 @@ namespace LoveHeart.Views
                     Tools.WriteAt(Config.fromBorder, row, $"  {pet.Name}");
                     Tools.WriteAt($", and that thing is a {pet.TypeOfAnimal}",ConsoleColor.DarkGray);
                     row++;
+                    foreach (var note in pet.Notes)
+                    {
+                        Tools.WriteAt(Config.fromBorder, row, $"\t{note}",ConsoleColor.Green);
+                        row++;
+                    }
                 }
             }
             Console.ReadKey();

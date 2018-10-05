@@ -16,6 +16,9 @@ namespace LoveHeart.Domain
             Pet p4 = new Pet("Kissen", "Pjurre", "Cat", new DateTime(2018 - 01 - 01));
             Pet p5 = new Pet("Ludde", "Ludde", "Dinasure", new DateTime(2018 - 01 - 01));
 
+            p1.Notes.Add("Testar1");
+            p1.Notes.Add("Testar 2");
+
             Program.customers["470101-1234"].OwnerAnimals.Add(p1);
             Program.customers["470101-1234"].OwnerAnimals.Add(p2);
             Program.customers["990101-5123"].OwnerAnimals.Add(p3);
