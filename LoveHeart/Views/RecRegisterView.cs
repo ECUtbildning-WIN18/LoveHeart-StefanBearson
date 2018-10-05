@@ -15,7 +15,6 @@ namespace LoveHeart.Views
             HeaderView.Header();
             Console.WriteLine();
             Console.WriteLine("# Register new customer");
-            Console.WriteLine($"{LogIn.userLogdIn} is loged in!");
             Console.WriteLine();
             Console.Write("First name: ");
             string firstName = Console.ReadLine();
@@ -28,7 +27,6 @@ namespace LoveHeart.Views
             char correct = Console.ReadKey().KeyChar;
             if (correct == 'y' || correct == 'Y')
             {
-
                 if (Program.customers.ContainsKey(socialSecutityNumber))
                 {
                     Console.WriteLine("Customer already exist.");
@@ -41,8 +39,6 @@ namespace LoveHeart.Views
                 {
                     PetOwner petowner = new PetOwner(firstName, lastName, socialSecutityNumber);
                     Program.customers.Add(petowner.SocialSecurityNumber, petowner);
-
-
                     RecRegisterPetView.PetRegView(petowner);
                 }
             }
