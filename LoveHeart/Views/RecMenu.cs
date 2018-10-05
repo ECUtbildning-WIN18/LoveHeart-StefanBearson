@@ -12,7 +12,7 @@ namespace LoveHeart.Views
         {
             Console.Clear();
             HeaderView.Header();
-            Console.WriteLine();
+            FooterView.Footer();
             Console.WriteLine("Receptionist Menu");
             Console.WriteLine();
             Console.WriteLine("1. Register new custemer");

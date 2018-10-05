@@ -19,6 +19,7 @@ namespace LoveHeart.Views
         {
             Console.Clear();
             HeaderView.Header();
+            FooterView.Footer();
             userLogdIn = "";
             //int a = 8;
             //int b = 3;
@@ -48,9 +49,12 @@ namespace LoveHeart.Views
                     if (Program.users.Any(entry => entry.Key == userName && entry.Value.Password == password))
                     {
                         Console.Clear();
+                        Console.SetCursorPosition(8, 8);
                         Console.WriteLine($"{userName} wants to log in!");
-                        Console.WriteLine();
+                        
+                        Console.SetCursorPosition(8, 10);
                         Console.WriteLine("Is this correct? (Y)es (N)o");
+                        Console.SetCursorPosition(8, 12);
                         char correct = Console.ReadKey().KeyChar;
                         if (correct == 'y' || correct == 'Y')
                         {
