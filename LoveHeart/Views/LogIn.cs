@@ -53,13 +53,13 @@ namespace LoveHeart.Views
                             }
                             else
                             {
-                                Tools.WriteAt(Config.fromBorder, 8, $"Wrong User role", ConsoleColor.Red);
+                                Tools.WriteAt(Config.fromBorder, 4, $"Wrong User role", ConsoleColor.Red);
                                 Console.ReadKey();
                             }
                         }
                         else
                         {
-                            Tools.WriteAt(Config.fromBorder, 8,$"Login failed, please try again", ConsoleColor.Red);
+                            Tools.WriteAt(Config.fromBorder, 4,$"Login failed, please try again", ConsoleColor.Red);
                             Console.ReadKey();
                             View();
                         }
@@ -69,9 +69,9 @@ namespace LoveHeart.Views
                         Console.Clear();
                         HeaderView.Header();
                         FooterView.Footer();
-                        Tools.WriteAt(Config.fromBorder, 8, $"Wrong Password", ConsoleColor.Red);
-                        Tools.WriteAt(Config.fromBorder, 10, $"You have {3 - trys} left!", ConsoleColor.Red);
-                        Tools.WriteAt(Config.fromBorder, 12, $"Password: ", ConsoleColor.Red);
+                        Tools.WriteAt(Config.fromBorder, 4, $"Wrong Password", ConsoleColor.Red);
+                        Tools.WriteAt(Config.fromBorder, 6, $"You have {3 - trys} left!", ConsoleColor.Red);
+                        Tools.WriteAt(Config.fromBorder, 8, $"Password: ", ConsoleColor.Red);
                         password = SecretPassword.EnterPassword();
                         trys++;
                     }
@@ -79,7 +79,7 @@ namespace LoveHeart.Views
                 Console.Clear();
                 HeaderView.Header();
                 FooterView.Footer();
-                Tools.WriteAt(Config.fromBorder, 8, $"Contact Admin for support!", ConsoleColor.Red);
+                Tools.WriteAt(Config.fromBorder, 4, $"Contact Admin for support!", ConsoleColor.Red);
                 Console.ReadKey();
                 View();
             }
@@ -88,7 +88,7 @@ namespace LoveHeart.Views
                 Console.Clear();
                 HeaderView.Header();
                 FooterView.Footer();
-                Tools.WriteAt(Config.fromBorder, 8, $"User dont exist! Try Again...", ConsoleColor.Red);
+                Tools.WriteAt(Config.fromBorder, 4, $"User dont exist! Try Again...", ConsoleColor.Red);
                 Console.ReadKey();
                 View();
             }

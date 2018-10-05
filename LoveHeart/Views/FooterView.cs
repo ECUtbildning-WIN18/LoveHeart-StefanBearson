@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using LoveHeart.Actions;
 
 namespace LoveHeart.Views
 {
@@ -11,12 +12,10 @@ namespace LoveHeart.Views
     {
         public static void Footer()
         {
-            Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine();
             Console.SetWindowSize(65,20);
             Console.SetBufferSize(70, 20);
-            Console.SetCursorPosition(0,18);
-            Console.WriteLine($"###########################################################");
+            Tools.WriteAt(0, 18, $"###########################################################", ConsoleColor.DarkRed);
+            Tools.WriteAt(0, 19, $"A StefanBearson Solution", ConsoleColor.DarkRed);
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(0,2);
         }

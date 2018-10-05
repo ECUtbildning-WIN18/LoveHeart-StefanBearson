@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LoveHeart.Actions;
 
 namespace LoveHeart.Views
 {
@@ -11,25 +12,28 @@ namespace LoveHeart.Views
         public static void view()
         {
             Console.Clear();
-            //HeaderView.Header();
             Console.SetBufferSize(80,3000);
+            Console.CursorVisible = false;
+            int row = 1;
             foreach (var vets in Program.vets)
             {
-                Console.WriteLine("######################################");
-                Console.WriteLine($"{vets.FirstName} {vets.LastName}");
-                Console.WriteLine("--------------------------------------");
+                Tools.WriteAt(0,row, "######################################");
+                row++;
+                Tools.WriteAt(1, row, $"{vets.FirstName} {vets.LastName}", ConsoleColor.Blue);
+                row++;
+                Tools.WriteAt(0, row, "--------------------------------------");
+                row++;
                 foreach (var t in vets.schedule)
                 {
-                    Console.WriteLine($"\t{t.Key} : {t.Value}");
+                    Tools.WriteAt(1, row, $"  {t.Key} \t {t.Value}");
+                    row++;
                 }
-                Console.WriteLine("######################################");
+                Tools.WriteAt(0, row, "######################################");
                 Console.WriteLine();
             }
-            
             Console.SetCursorPosition(0,0);
-            
-            
             Console.ReadKey();
+            Console.CursorVisible = true;
             RecMenu.MenuView();
         }
     }
