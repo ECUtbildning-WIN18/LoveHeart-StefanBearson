@@ -36,6 +36,11 @@ namespace LoveHeart.Views
                 {
                     Tools.WriteAt(Config.fromBorder, 6 + row, $"\t{customer.Name}, {customer.NickName} is a {customer.TypeOfAnimal}", ConsoleColor.Blue);
                     row++;
+                    foreach (var note in customer.Notes)
+                    {
+                        Tools.WriteAt(Config.fromBorder,6 + row, $"\t\t{note}",ConsoleColor.Green);
+                        row++;
+                    }
                 }
                 Tools.WriteAt(Config.fromBorder, 8 + row, $"Press any key to continue...", ConsoleColor.DarkRed);
                 Console.ReadKey();
