@@ -17,6 +17,7 @@ namespace LoveHeart.Actions
                 if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
                 {
                     password += key.KeyChar;
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     Console.Write("*");
                 }
                 else
@@ -33,6 +34,7 @@ namespace LoveHeart.Actions
                 }
             } while (true);
 
+            Console.ForegroundColor = ConsoleColor.White;
             return password;
         }
     }

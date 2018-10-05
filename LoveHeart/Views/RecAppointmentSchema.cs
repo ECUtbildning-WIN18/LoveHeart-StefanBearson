@@ -13,7 +13,6 @@ namespace LoveHeart.Views
             Console.Clear();
             //HeaderView.Header();
             Console.SetBufferSize(80,3000);
-            Console.WriteLine("1");
             foreach (var vets in Program.vets)
             {
                 Console.WriteLine("######################################");
@@ -21,35 +20,12 @@ namespace LoveHeart.Views
                 Console.WriteLine("--------------------------------------");
                 foreach (var t in vets.schedule)
                 {
-                    Console.WriteLine($"{t.Key} : {t.Value}");
+                    Console.WriteLine($"\t{t.Key} : {t.Value}");
                 }
                 Console.WriteLine("######################################");
                 Console.WriteLine();
             }
-            foreach (var vets in Program.vets)
-            {
-                Console.WriteLine("######################################");
-                Console.WriteLine($"{vets.FirstName} {vets.LastName}");
-                Console.WriteLine("--------------------------------------");
-                foreach (var t in vets.schedule)
-                {
-                    Console.WriteLine($"{t.Key} : {t.Value}");
-                }
-                Console.WriteLine("######################################");
-                Console.WriteLine();
-            }
-            foreach (var vets in Program.vets)
-            {
-                Console.WriteLine("######################################");
-                Console.WriteLine($"{vets.FirstName} {vets.LastName}");
-                Console.WriteLine("--------------------------------------");
-                foreach (var t in vets.schedule)
-                {
-                    Console.WriteLine($"{t.Key} : {t.Value}");
-                }
-                Console.WriteLine("######################################");
-                Console.WriteLine();
-            }
+            
             Console.SetCursorPosition(0,0);
             
             

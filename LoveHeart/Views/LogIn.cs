@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design.Serialization;
 using System.Linq;
-using System.Text;
-using System.Threading;
 using LoveHeart.Actions;
-using LoveHeart.Domain;
-using Microsoft.Win32.SafeHandles;
-
 
 namespace LoveHeart.Views
 {
@@ -21,27 +14,15 @@ namespace LoveHeart.Views
             HeaderView.Header();
             FooterView.Footer();
             userLogdIn = "";
-            //int a = 8;
-            //int b = 3;
-            //Console.SetWindowSize(a,b);
-
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    a += 8;
-            //    b += 3;
-            //    Console.SetWindowSize(a,b);
-            //    Thread.Sleep(200);
-            //}
-            
-            Console.WriteLine("Please Log in");
-            Console.WriteLine();
-            Console.Write("UserName: ");
+            Tools.WriteAt(Config.fromBorder, 4, "Please Log in");
+            Tools.WriteAt(Config.fromBorder, 5, "Username: ");
+            Console.ForegroundColor = ConsoleColor.Blue;
             string userName = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.White;
             if (Program.users.ContainsKey(userName))
             {
-                Console.Write("Password: ");
+                Tools.WriteAt(Config.fromBorder, 6, "Password:  ");
                 string password = SecretPassword.EnterPassword();
-
                 var trys = 0;
 
                 while (trys < 3)
@@ -49,7 +30,6 @@ namespace LoveHeart.Views
                     if (Program.users.Any(entry => entry.Key == userName && entry.Value.Password == password))
                     {
                         Console.Clear();
-
                         Tools.WriteAt(8,8, $"{userName}",ConsoleColor.Blue);
                         Tools.WriteAt(" wants to log in!");
                         Tools.IsThisCorrectText();

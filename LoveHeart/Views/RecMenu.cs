@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LoveHeart.Actions;
 
 namespace LoveHeart.Views
 {
@@ -13,17 +14,14 @@ namespace LoveHeart.Views
             Console.Clear();
             HeaderView.Header();
             FooterView.Footer();
-            Console.WriteLine("Receptionist Menu");
-            Console.WriteLine();
-            Console.WriteLine("1. Register new custemer");
-            Console.WriteLine("2. Search custemer");
-            Console.WriteLine("3. List cusomers");
-            Console.WriteLine("----------------------------");
-            Console.WriteLine("4. Registry appointment");
-            Console.WriteLine("5. List appointments");
-            Console.WriteLine("----------------------------");
-            Console.WriteLine();
-            Console.WriteLine("E. Logout and exit");
+            Tools.WriteAt(Config.fromBorder,4, "Receptionist Menu");
+            Tools.WriteAt(Config.fromBorder, 6, "1. Register new custemer");
+            Tools.WriteAt(Config.fromBorder, 7, "2. Search custemer");
+            Tools.WriteAt(Config.fromBorder, 8, "3. List cusomers");
+            Tools.WriteAt(Config.fromBorder, 10, "4. Registry appointment");
+            Tools.WriteAt(Config.fromBorder, 11, "5. List appointments");
+            Tools.WriteAt(Config.fromBorder, 13, "E. Logout and exit");
+            
             Char thePick = Console.ReadKey().KeyChar;
 
             switch (thePick)
