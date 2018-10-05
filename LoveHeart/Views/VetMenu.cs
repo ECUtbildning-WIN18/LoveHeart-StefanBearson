@@ -11,6 +11,8 @@ namespace LoveHeart.Views
         public static void menuView()
         {
             Console.Clear();
+            HeaderView.Header();
+            Console.WriteLine();
             Console.WriteLine("vet menu");
             Console.ReadKey();
         }

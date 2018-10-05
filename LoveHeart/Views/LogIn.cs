@@ -17,6 +17,8 @@ namespace LoveHeart.Views
         public static string role = "";
         public static void View()
         {
+            Console.Clear();
+            HeaderView.Header();
             userLogdIn = "";
             //int a = 8;
             //int b = 3;
@@ -29,7 +31,7 @@ namespace LoveHeart.Views
             //    Console.SetWindowSize(a,b);
             //    Thread.Sleep(200);
             //}
-            Console.Clear();
+            
             Console.WriteLine("Please Log in");
             Console.WriteLine();
             Console.Write("UserName: ");

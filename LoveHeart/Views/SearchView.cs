@@ -11,6 +11,8 @@ namespace LoveHeart.Views
         public static void Search()
         {
             Console.Clear();
+            HeaderView.Header();
+            Console.WriteLine();
             Console.WriteLine("# Search customer");
             Console.WriteLine();
             Console.WriteLine("Search social security number (yymmdd-xxxx)");

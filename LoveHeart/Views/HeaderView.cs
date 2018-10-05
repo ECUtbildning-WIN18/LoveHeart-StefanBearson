@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace LoveHeart.Views
 {
-    class AdminMenu
+    class HeaderView
     {
-        public static void menuView()
+        public static void Header()
         {
-            Console.Clear();
-            HeaderView.Header();
+            Console.WriteLine($"# Vet Admin Software                       Logd in: {LogIn.userLogdIn}\t");
             Console.WriteLine();
-            Console.WriteLine("admin menu");
-            Console.ReadKey();
         }
     }
 }

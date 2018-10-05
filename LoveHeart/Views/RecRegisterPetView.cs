@@ -12,6 +12,8 @@ namespace LoveHeart.Views
         public static void PetRegView(PetOwner petowner)
         {
             Console.Clear();
+            HeaderView.Header();
+            Console.WriteLine();
             //petowner.OwnerAnimals.Add(new Pet("test", "test", DateTime.MinValue));
             Console.WriteLine("Adding a pet");
             Console.WriteLine();

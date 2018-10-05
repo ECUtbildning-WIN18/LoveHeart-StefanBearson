@@ -11,6 +11,8 @@ namespace LoveHeart.Views
         public static void view()
         {
             Console.Clear();
+            HeaderView.Header();
+            Console.WriteLine();
             foreach (var vets in Program.vets)
             {
                 Console.WriteLine("######################################");

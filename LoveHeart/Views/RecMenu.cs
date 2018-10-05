@@ -11,8 +11,9 @@ namespace LoveHeart.Views
         public static void menuView()
         {
             Console.Clear();
+            HeaderView.Header();
+            Console.WriteLine();
             Console.WriteLine("Receptionist Menu");
-            Console.WriteLine($"{LogIn.userLogdIn} is loged in!");
             Console.WriteLine();
             Console.WriteLine("1. Register new custemer");
             Console.WriteLine("2. Search custemer");

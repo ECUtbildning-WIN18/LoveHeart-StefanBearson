@@ -12,6 +12,8 @@ namespace LoveHeart.Views
         public static void View()
         {
             Console.Clear();
+            HeaderView.Header();
+            Console.WriteLine();
             Console.WriteLine("# Register new customer");
             Console.WriteLine($"{LogIn.userLogdIn} is loged in!");
             Console.WriteLine();

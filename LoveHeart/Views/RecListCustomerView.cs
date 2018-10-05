@@ -11,6 +11,8 @@ namespace LoveHeart.Views
         public static void listView()
         {
             Console.Clear();
+            HeaderView.Header();
+            Console.WriteLine();
             foreach (var customer in Program.customers)
             {
                 Console.WriteLine($"{customer.Value.FirstName} {customer.Value.LastName} - {customer.Value.SocialSecurityNumber}");

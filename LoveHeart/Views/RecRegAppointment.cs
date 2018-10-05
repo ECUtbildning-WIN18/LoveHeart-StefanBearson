@@ -13,6 +13,8 @@ namespace LoveHeart.Views
         public static void addAppointment()
         {
             Console.Clear();
+            HeaderView.Header();
+            Console.WriteLine();
             Console.WriteLine("Register Appointment");
             Console.WriteLine();
             Console.WriteLine("Pet name:");
