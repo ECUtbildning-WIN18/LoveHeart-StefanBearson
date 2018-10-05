@@ -49,11 +49,12 @@ namespace LoveHeart.Views
                     if (Program.users.Any(entry => entry.Key == userName && entry.Value.Password == password))
                     {
                         Console.Clear();
-                        Console.SetCursorPosition(8, 8);
-                        Console.WriteLine($"{userName} wants to log in!");
-                        
-                        Console.SetCursorPosition(8, 10);
-                        Console.WriteLine("Is this correct? (Y)es (N)o");
+
+                        Tools.WriteAt(8,8, $"{userName}",ConsoleColor.Blue);
+                        Tools.WriteAt(" wants to log in!");
+                        Tools.WriteAt(8, 10, $"Is this correct? ");
+                        Tools.WriteAt("(Y)es ", ConsoleColor.DarkGreen);
+                        Tools.WriteAt("(N)o", ConsoleColor.DarkRed);
                         Console.SetCursorPosition(8, 12);
                         char correct = Console.ReadKey().KeyChar;
                         if (correct == 'y' || correct == 'Y')
@@ -73,44 +74,45 @@ namespace LoveHeart.Views
                             }
                             else
                             {
-                                Console.WriteLine("error!");
+                                Tools.WriteAt(2, 8, $"Wrong User role", ConsoleColor.Red);
+                                Console.ReadKey();
                             }
                         }
                         else
                         {
-                            Console.WriteLine("Login failed, please try again");
+                            Tools.WriteAt(2,8,$"Login failed, please try again", ConsoleColor.Red);
                             Console.ReadKey();
                             View();
                         }
-                        
-                        
-
                     }
                     else
                     {
                         Console.Clear();
-                        Console.WriteLine($"You have {3 - trys} left!");
-                        Console.WriteLine();
-                        Console.Write("Password: ");
+                        HeaderView.Header();
+                        FooterView.Footer();
+                        Tools.WriteAt(2, 8, $"Wrong Password", ConsoleColor.Red);
+                        Tools.WriteAt(2, 10, $"You have {3 - trys} left!", ConsoleColor.Red);
+                        Tools.WriteAt(2, 12, $"Password: ", ConsoleColor.Red);
                         password = SecretPassword.EnterPassword();
                         trys++;
                     }
                 }
-
-                Console.WriteLine("Contact Admin for support!");
+                Console.Clear();
+                HeaderView.Header();
+                FooterView.Footer();
+                Tools.WriteAt(2, 8, $"Contact Admin for support!", ConsoleColor.Red);
+                Console.ReadKey();
                 View();
-
-
             }
             else
             {
                 Console.Clear();
-                Console.WriteLine("User dont exist! Try Again...");
+                HeaderView.Header();
+                FooterView.Footer();
+                Tools.WriteAt(2, 8, $"User dont exist! Try Again...", ConsoleColor.Red);
                 Console.ReadKey();
                 View();
             }
-            
-
         }
     }
 }

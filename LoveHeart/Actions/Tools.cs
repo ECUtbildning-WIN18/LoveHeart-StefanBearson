@@ -22,5 +22,17 @@ namespace LoveHeart.Actions
             Console.Write(text);
             Console.ForegroundColor = ConsoleColor.White;
         }
+
+        public static void WriteAt(string text, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(text);
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        public static void WriteAt(string text)
+        {
+            Console.Write(text);
+        }
     }
 }
