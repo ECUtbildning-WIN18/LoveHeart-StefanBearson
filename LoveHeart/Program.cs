@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using LoveHeart.Actions;
 using LoveHeart.Domain;
 using LoveHeart.Views;
 
@@ -23,6 +25,8 @@ namespace LoveHeart
             
             VetInitDB.AddVets();
             AppointmentInitDB.add();
+            Thread escToQuit = new Thread(Tools.EscToQuit);
+            escToQuit.Start();
             LogIn.View();
         }
     }

@@ -12,7 +12,8 @@ namespace LoveHeart.Views
         {
             Console.Clear();
             HeaderView.Header();
-            FooterView.Footer();
+            Console.SetBufferSize(300, 20);
+            //FooterView.Footer();
             foreach (var customer in Program.customers)
             {
                 Console.WriteLine($"{customer.Value.FirstName} {customer.Value.LastName} - {customer.Value.SocialSecurityNumber}");
@@ -24,6 +25,7 @@ namespace LoveHeart.Views
             }
 
             Console.ReadKey();
+            
             RecMenu.menuView();
 
         }

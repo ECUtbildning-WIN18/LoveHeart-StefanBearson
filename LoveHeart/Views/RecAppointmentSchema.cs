@@ -12,7 +12,8 @@ namespace LoveHeart.Views
         {
             Console.Clear();
             HeaderView.Header();
-            FooterView.Footer();
+            Console.SetBufferSize(300, 20);
+            //FooterView.Footer();
             foreach (var vets in Program.vets)
             {
                 Console.WriteLine("######################################");

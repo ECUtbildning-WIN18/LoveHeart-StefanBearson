@@ -34,5 +34,14 @@ namespace LoveHeart.Actions
         {
             Console.Write(text);
         }
+        public static void EscToQuit()
+        {
+
+            while (Console.ReadKey(true).Key != ConsoleKey.Escape)
+            {
+                
+            }
+            Environment.Exit(0);
+        }
     }
 }

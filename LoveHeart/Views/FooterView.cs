@@ -16,9 +16,13 @@ namespace LoveHeart.Views
             Console.SetWindowSize(65,20);
             Console.SetBufferSize(70, 20);
             Console.SetCursorPosition(0,18);
-            Console.WriteLine($"##############################################################");
+            Console.WriteLine($"##############################################| Esc : QUIT |###");
+            
+
+
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(0,2);
+            
         }
     }
 }
