@@ -33,7 +33,8 @@ namespace LoveHeart.Views
                 case '4': RecRegAppointment.addAppointment(); break;
                 case '5': RecAppointmentSchema.view(); break;
                 case 'E':
-                case 'e': LogIn.View(); break;
+                case 'e':
+                    LogIn.userLogdIn = ""; LogIn.View(); break;
                 default: MenuView(); break;
             }
             Console.ReadKey();

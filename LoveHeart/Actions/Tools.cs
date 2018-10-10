@@ -10,14 +10,19 @@ namespace LoveHeart.Actions
     {
         public static void WriteAt(int fromLeft, int fromTop, string text)
         {
+            if(Program.speak)
+                Program.synth.Speak(text);
+
             Console.SetCursorPosition(fromLeft,fromTop);
             Console.Write(text);
         }
 
         public static void WriteAt(int fromLeft, int fromTop, string text, ConsoleColor color)
         {
-            Console.SetCursorPosition(fromLeft, fromTop);
+            if (Program.speak)
+                Program.synth.Speak(text);
 
+            Console.SetCursorPosition(fromLeft, fromTop);
             Console.ForegroundColor = color;
             Console.Write(text);
             Console.ForegroundColor = ConsoleColor.White;
@@ -25,6 +30,8 @@ namespace LoveHeart.Actions
 
         public static void WriteAt(string text, ConsoleColor color)
         {
+            if (Program.speak)
+                Program.synth.Speak(text);
             Console.ForegroundColor = color;
             Console.Write(text);
             Console.ForegroundColor = ConsoleColor.White;
@@ -32,6 +39,8 @@ namespace LoveHeart.Actions
 
         public static void WriteAt(string text)
         {
+            if (Program.speak)
+                Program.synth.Speak(text);
             Console.Write(text);
         }
 
