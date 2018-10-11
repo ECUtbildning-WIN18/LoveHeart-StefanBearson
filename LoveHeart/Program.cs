@@ -30,13 +30,6 @@ namespace LoveHeart
 
         public static void Testar()
         {
-            //UserLoader test = new UserLoader();
-            //var users = test.LoadUsers();
-
-            //foreach (var user in users)
-            //{
-            //    Console.WriteLine($"{user.UserName} has password: {user.Password}");
-            //}
 
             CustomerAndPetLoader customerLoader = new CustomerAndPetLoader();
             var customers = customerLoader.LoadUsers();
