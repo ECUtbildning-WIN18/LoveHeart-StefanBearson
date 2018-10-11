@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LoveHeart.Actions;
+﻿using LoveHeart.Actions;
+using System;
 
 namespace LoveHeart.Views
 {
@@ -15,14 +11,15 @@ namespace LoveHeart.Views
             HeaderView.Header();
             FooterView.Footer();
             Console.CursorVisible = false;
-            Tools.WriteAt(Config.fromBorder,4, "Receptionist Menu");
+            Tools.WriteAt(Config.fromBorder, 4, "Receptionist Menu");
             Tools.WriteAt(Config.fromBorder, 6, "1. Register new custemer");
             Tools.WriteAt(Config.fromBorder, 7, "2. Search custemer");
             Tools.WriteAt(Config.fromBorder, 8, "3. List customers");
             Tools.WriteAt(Config.fromBorder, 10, "4. Registry appointment");
             Tools.WriteAt(Config.fromBorder, 11, "5. List appointments");
+            Tools.WriteAt(Config.fromBorder, 11, "6. List customers 2");
             Tools.WriteAt(Config.fromBorder, 13, "E. Logout and exit");
-            
+
             ChoseOnMenuViewAction();
         }
 
@@ -30,6 +27,7 @@ namespace LoveHeart.Views
         {
             Char thePick = Console.ReadKey().KeyChar;
             Console.CursorVisible = true;
+
             switch (thePick)
             {
                 case '1': RecRegisterView.View(); break;
@@ -37,6 +35,7 @@ namespace LoveHeart.Views
                 case '3': RecListCustomerView.listView(); break;
                 case '4': RecRegAppointment.addAppointment(); break;
                 case '5': RecAppointmentSchema.view(); break;
+                case '6': CustomerList.PrintCustomerList(); break;
                 case 'E':
                 case 'e':
                     LogIn.userLogdIn = ""; LogIn.View(); break;

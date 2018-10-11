@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LoveHeart.Views;
+﻿using LoveHeart.Views;
+using System;
 
 namespace LoveHeart.Actions
 {
@@ -11,10 +7,10 @@ namespace LoveHeart.Actions
     {
         public static void WriteAt(int fromLeft, int fromTop, string text)
         {
-            if(Program.speak)
+            if (Program.speak)
                 Program.synth.Speak(text);
 
-            Console.SetCursorPosition(fromLeft,fromTop);
+            Console.SetCursorPosition(fromLeft, fromTop);
             Console.Write(text);
         }
 
@@ -33,6 +29,7 @@ namespace LoveHeart.Actions
         {
             if (Program.speak)
                 Program.synth.Speak(text);
+
             Console.ForegroundColor = color;
             Console.Write(text);
             Console.ForegroundColor = ConsoleColor.White;
@@ -42,6 +39,7 @@ namespace LoveHeart.Actions
         {
             if (Program.speak)
                 Program.synth.Speak(text);
+
             Console.Write(text);
         }
 
@@ -60,6 +58,7 @@ namespace LoveHeart.Actions
             Tools.WriteAt("(N)o", ConsoleColor.DarkRed);
             Console.SetCursorPosition(8, 16);
         }
+
         public static void WrongUsernamePassword()
         {
             Tools.WriteAt(Config.fromBorder, 13, $"Wrong username and/or password");
@@ -72,14 +71,15 @@ namespace LoveHeart.Actions
         public static void WrongUsernamePasswordAction()
         {
             var chosenOption = Console.ReadKey().Key;
+
             if (chosenOption == ConsoleKey.Y)
             {
                 LogIn.View();
-            }else if (chosenOption == ConsoleKey.N)
+            }
+            else if (chosenOption == ConsoleKey.N)
             {
                 Environment.Exit(0);
             }
         }
-
     }
 }

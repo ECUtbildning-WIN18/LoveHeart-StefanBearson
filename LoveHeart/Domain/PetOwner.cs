@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace LoveHeart.Domain
 {
@@ -21,6 +17,7 @@ namespace LoveHeart.Domain
             SocialSecurityNumber = socialSecurityNumber;
             OwnerAnimals = ownerAnimals;
         }
+
         public PetOwner(string firstName, string lastName, string socialSecurityNumber)
         {
             FirstName = firstName;

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LoveHeart.Actions
 {
@@ -33,7 +29,6 @@ namespace LoveHeart.Actions
                     }
                 }
             } while (true);
-
             Console.ForegroundColor = ConsoleColor.White;
             return password;
         }

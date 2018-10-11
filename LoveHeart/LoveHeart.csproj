@@ -68,6 +68,7 @@
     <Compile Include="Services\IUserLoader.cs" />
     <Compile Include="Services\UserLoader.cs" />
     <Compile Include="Views\AdminMenu.cs" />
+    <Compile Include="Views\CustomerList.cs" />
     <Compile Include="Views\FooterView.cs" />
     <Compile Include="Views\HeaderView.cs" />
     <Compile Include="Views\LogIn.cs" />

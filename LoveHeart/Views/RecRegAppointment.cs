@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
-using System.Text;
-using System.Threading.Tasks;
-using LoveHeart.Domain;
 
 namespace LoveHeart.Views
 {
@@ -16,6 +11,7 @@ namespace LoveHeart.Views
             Console.Clear();
             HeaderView.Header();
             FooterView.Footer();
+
             Console.WriteLine("Register Appointment");
             Console.WriteLine();
             Console.WriteLine("Pet name:");

@@ -1,7 +1,6 @@
-﻿using System;
-using System.Linq;
-using LoveHeart.Actions;
+﻿using LoveHeart.Actions;
 using LoveHeart.Services;
+using System;
 
 namespace LoveHeart.Views
 {
@@ -9,6 +8,7 @@ namespace LoveHeart.Views
     {
         public static string userLogdIn = "";
         public static string role = "";
+
         public static void View()
         {
             Console.Clear();

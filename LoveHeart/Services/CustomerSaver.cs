@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LoveHeart.Domain;
 using System.Xml.Linq;
-using LoveHeart.Domain;
 
 namespace LoveHeart.Services
 {
@@ -14,7 +9,7 @@ namespace LoveHeart.Services
 
         public static void Save(PetOwner customer)
         {
-            
+
             {
                 //var customerlist = XDocument.Load("Customers.xml");
 
@@ -34,7 +29,6 @@ namespace LoveHeart.Services
                             new XAttribute("nickname", pets.NickName));
                     customerInfo.Add(customerPet);
                 }
-                
 
                 root.Add(customerInfo);
 
@@ -52,16 +46,6 @@ namespace LoveHeart.Services
                 new XAttribute("firstname", customer.FirstName),
                 new XAttribute("lastname", customer.LastName),
                 new XAttribute("socialsecuritynumber", customer.SocialSecurityNumber));
-
-            //foreach (var pets in customer.OwnerAnimals)
-            //{
-            //    var customerPet =
-            //        new XElement("pet",
-            //            new XAttribute("type", pets.TypeOfAnimal),
-            //            new XAttribute("name", pets.Name),
-            //            new XAttribute("nickname", pets.NickName));
-            //    customerInfo.Add(customerPet);
-            //}
 
             var customerPet =
                 new XElement("pet",

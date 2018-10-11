@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LoveHeart.Actions;
+﻿using LoveHeart.Actions;
+using System;
 
 namespace LoveHeart.Views
 {
@@ -12,12 +8,14 @@ namespace LoveHeart.Views
         public static void view()
         {
             Console.Clear();
-            Console.SetBufferSize(80,3000);
+            Console.SetBufferSize(80, 3000);
             Console.CursorVisible = false;
+
             int row = 1;
+
             foreach (var vets in Program.vets)
             {
-                Tools.WriteAt(0,row, "######################################");
+                Tools.WriteAt(0, row, "######################################");
                 row++;
                 Tools.WriteAt(1, row, $"{vets.FirstName} {vets.LastName}", ConsoleColor.Blue);
                 row++;
@@ -31,7 +29,8 @@ namespace LoveHeart.Views
                 Tools.WriteAt(0, row, "######################################");
                 Console.WriteLine();
             }
-            Console.SetCursorPosition(0,0);
+
+            Console.SetCursorPosition(0, 0);
             Console.ReadKey();
             Console.CursorVisible = true;
             RecMenu.MenuView();

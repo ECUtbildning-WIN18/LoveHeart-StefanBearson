@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LoveHeart.Domain
 {
@@ -23,7 +20,6 @@ namespace LoveHeart.Domain
 
         public void AddAppointment(DateTime date, string pet)
         {
-            //schedule.Add(new DateTime(2018,07,08,14,00,00),"test" );
             schedule.Add(date, pet);
         }
     }
