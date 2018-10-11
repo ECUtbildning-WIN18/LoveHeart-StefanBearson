@@ -1,4 +1,5 @@
 ﻿using LoveHeart.Actions;
+using LoveHeart.Domain;
 using LoveHeart.Services;
 using System;
 
@@ -31,8 +32,12 @@ namespace LoveHeart.Views
             var authenticationService = new AuthenticationService();
             var user = authenticationService.Authenticate(username, password);
 
-            var userLoader = new UserLoader();
+            CheckIfNotNull(user);
+            Console.ReadKey();
+        }
 
+        public static void CheckIfNotNull(User user)
+        {
             if (user != null)
             {
                 userLogdIn = user.UserName;
@@ -43,7 +48,6 @@ namespace LoveHeart.Views
                 Tools.WrongUsernamePassword();
                 Tools.WrongUsernamePasswordAction();
             }
-            Console.ReadKey();
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using LoveHeart.Services;
 using System;
+using System.Collections.Generic;
+using LoveHeart.Domain;
 
 namespace LoveHeart.Views
 {
@@ -15,6 +17,14 @@ namespace LoveHeart.Views
             CustomerAndPetLoader customerLoader = new CustomerAndPetLoader();
             var customers = customerLoader.LoadUsers();
 
+            PrintToView(customers);
+
+            Console.ReadKey();
+            RecMenu.MenuView();
+        }
+
+        public static void PrintToView(List<PetOwner> customers)
+        {
             foreach (var customer in customers)
             {
                 Console.WriteLine($"{customer.FirstName} {customer.LastName} : {customer.SocialSecurityNumber}");
@@ -25,9 +35,6 @@ namespace LoveHeart.Views
                     Console.WriteLine($"\t{pet.Name} is a {pet.TypeOfAnimal}");
                 }
             }
-
-            Console.ReadKey();
-            RecMenu.MenuView();
         }
     }
 }
