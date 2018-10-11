@@ -13,8 +13,9 @@ namespace LoveHeart
         public static Dictionary<string, User> users = new Dictionary<string, User>();
         public static Dictionary<string, PetOwner> customers = new Dictionary<string, PetOwner>();
         public static List<Vet> vets = new List<Vet>();
-        public static bool speak = false;
+
         public static SpeechSynthesizer synth = new SpeechSynthesizer();
+        public static bool speak = false;
 
         static void Main(string[] args)
         {
@@ -30,7 +31,6 @@ namespace LoveHeart
 
         public static void Testar()
         {
-
             CustomerAndPetLoader customerLoader = new CustomerAndPetLoader();
             var customers = customerLoader.LoadUsers();
 
