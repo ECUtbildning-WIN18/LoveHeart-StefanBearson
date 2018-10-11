@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Customers>
+  <Customer firstName="Pelle" lastName="Jönsson" SocialSecurityNumber="470101-1234"></Customer>
+  <Customer firstName="Göran" lastName="Ahara" SocialSecurityNumber="990101-1234"></Customer>
+  <Customer firstName="Nils" lastName="Smith" SocialSecurityNumber="790101-1234"></Customer>
+  <Customer firstName="Sofia" lastName="Pjudor" SocialSecurityNumber="400101-1234"></Customer>
+  <Customer firstName="Sara" lastName="Lalala" SocialSecurityNumber="920101.1234"></Customer>
+</Customers>

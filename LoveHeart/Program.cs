@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Speech.Synthesis;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using LoveHeart.Actions;
-using LoveHeart.Domain;
+﻿using LoveHeart.Domain;
+using LoveHeart.Services;
 using LoveHeart.Views;
+using System;
+using System.Collections.Generic;
+using System.Speech.Synthesis;
 
 
 namespace LoveHeart
@@ -19,16 +15,41 @@ namespace LoveHeart
         public static List<Vet> vets = new List<Vet>();
         public static bool speak = false;
         public static SpeechSynthesizer synth = new SpeechSynthesizer();
+
         static void Main(string[] args)
         {
+            Testar();
 
-            UserInitDB.AddUsers();
             PetOwnerInitDB.AddPetOwners();
             PetInitDB.addingPetsToOwners();
             VetInitDB.AddVets();
             AppointmentInitDB.add();
-            
+
             LogIn.View();
+        }
+
+        public static void Testar()
+        {
+            //UserLoader test = new UserLoader();
+            //var users = test.LoadUsers();
+
+            //foreach (var user in users)
+            //{
+            //    Console.WriteLine($"{user.UserName} has password: {user.Password}");
+            //}
+
+            CustomerAndPetLoader customerLoader = new CustomerAndPetLoader();
+            var customers = customerLoader.LoadUsers();
+
+            foreach (var customer in customers)
+            {
+                Console.WriteLine($"{customer.FirstName} {customer.LastName} is a Customer!");
+                foreach (var pets in customer.OwnerAnimals)
+                {
+                    Console.WriteLine($"\t{pets.Name}");
+                }
+            }
+            Console.ReadKey();
         }
     }
 }

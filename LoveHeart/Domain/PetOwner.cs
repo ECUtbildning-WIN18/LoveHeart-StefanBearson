@@ -14,6 +14,13 @@ namespace LoveHeart.Domain
         public string LastName { get; set; }
         public string SocialSecurityNumber { get; set; }
 
+        public PetOwner(string firstName, string lastName, string socialSecurityNumber, List<Pet> ownerAnimals)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            SocialSecurityNumber = socialSecurityNumber;
+            OwnerAnimals = ownerAnimals;
+        }
         public PetOwner(string firstName, string lastName, string socialSecurityNumber)
         {
             FirstName = firstName;

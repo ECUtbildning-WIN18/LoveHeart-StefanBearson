@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Customers>
+  <Customer firstName="Pelle" lastName="Jönsson" SocialSecurityNumber="470101-1234">
+    <Pets>
+      <Pet name="Fido" nickName="Fidde" typeOfAnimal="dog"></Pet>
+      <Pet name="Delta" nickName="Animalis" typeOfAnimal="cat"></Pet>
+      <Pet name="Omega" nickName="Animalis" typeOfAnimal="cat"></Pet>
+    </Pets>
+  </Customer>
+  <Customer firstName="Göran" lastName="Ahara" SocialSecurityNumber="990101-1234">
+    <Pets>
+      <Pet name="Bravo" nickName="Animalis" typeOfAnimal="cat"></Pet>
+    </Pets>
+  </Customer>
+  <Customer firstName="Nils" lastName="Smith" SocialSecurityNumber="790101-1234">
+    <Pets>
+      <Pet name="Hoj" nickName="Fidde" typeOfAnimal="dog"></Pet>
+    </Pets>
+  </Customer>
+  <Customer firstName="Sofia" lastName="Pjudor" SocialSecurityNumber="400101-1234">
+    <Pets>
+      <Pet name="Toj" nickName="Fidde" typeOfAnimal="dog"></Pet>
+    </Pets>
+  </Customer>
+  <Customer firstName="Sara" lastName="Lalala" SocialSecurityNumber="920101.1234">
+    <Pets>
+      <Pet name="Roj" nickName="Fidde" typeOfAnimal="dog"></Pet>
+    </Pets>
+  </Customer>
+</Customers>
+
