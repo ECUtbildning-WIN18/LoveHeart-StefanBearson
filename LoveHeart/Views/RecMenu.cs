@@ -18,11 +18,16 @@ namespace LoveHeart.Views
             Tools.WriteAt(Config.fromBorder,4, "Receptionist Menu");
             Tools.WriteAt(Config.fromBorder, 6, "1. Register new custemer");
             Tools.WriteAt(Config.fromBorder, 7, "2. Search custemer");
-            Tools.WriteAt(Config.fromBorder, 8, "3. List cusomers");
+            Tools.WriteAt(Config.fromBorder, 8, "3. List customers");
             Tools.WriteAt(Config.fromBorder, 10, "4. Registry appointment");
             Tools.WriteAt(Config.fromBorder, 11, "5. List appointments");
             Tools.WriteAt(Config.fromBorder, 13, "E. Logout and exit");
             
+            ChoseOnMenuViewAction();
+        }
+
+        public static void ChoseOnMenuViewAction()
+        {
             Char thePick = Console.ReadKey().KeyChar;
             Console.CursorVisible = true;
             switch (thePick)
@@ -37,7 +42,6 @@ namespace LoveHeart.Views
                     LogIn.userLogdIn = ""; LogIn.View(); break;
                 default: MenuView(); break;
             }
-            Console.ReadKey();
         }
     }
 }

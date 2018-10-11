@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LoveHeart.Views;
 
 namespace LoveHeart.Actions
 {
@@ -59,5 +60,26 @@ namespace LoveHeart.Actions
             Tools.WriteAt("(N)o", ConsoleColor.DarkRed);
             Console.SetCursorPosition(8, 16);
         }
+        public static void WrongUsernamePassword()
+        {
+            Tools.WriteAt(Config.fromBorder, 13, $"Wrong username and/or password");
+            Tools.WriteAt(Config.fromBorder, 14, $"Do you want to try again? ");
+            Tools.WriteAt("(Y)es ", ConsoleColor.DarkGreen);
+            Tools.WriteAt("(N)o", ConsoleColor.DarkRed);
+            Console.SetCursorPosition(Config.fromBorder, 16);
+        }
+
+        public static void WrongUsernamePasswordAction()
+        {
+            var chosenOption = Console.ReadKey().Key;
+            if (chosenOption == ConsoleKey.Y)
+            {
+                LogIn.View();
+            }else if (chosenOption == ConsoleKey.N)
+            {
+                Environment.Exit(0);
+            }
+        }
+
     }
 }

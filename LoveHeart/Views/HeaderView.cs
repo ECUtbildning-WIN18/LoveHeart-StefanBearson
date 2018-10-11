@@ -15,7 +15,7 @@ namespace LoveHeart.Views
             Console.WriteLine($"# Vet Admin Software                       Logd in: {LogIn.userLogdIn}\t");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.White;
-            Program.speak = true;
+            Program.speak = false;
         }
     }
 }

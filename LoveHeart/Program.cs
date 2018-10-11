@@ -17,7 +17,7 @@ namespace LoveHeart
         public static Dictionary<string, User> users = new Dictionary<string, User>();
         public static Dictionary<string, PetOwner> customers = new Dictionary<string, PetOwner>();
         public static List<Vet> vets = new List<Vet>();
-        public static bool speak = true;
+        public static bool speak = false;
         public static SpeechSynthesizer synth = new SpeechSynthesizer();
         static void Main(string[] args)
         {
@@ -29,36 +29,6 @@ namespace LoveHeart
             AppointmentInitDB.add();
             
             LogIn.View();
-        }
-
-        public static void TestarLinq()
-        {
-            
-            var customer = customers.Where(a => a.Key == "470101-1234");
-            var keyValuePairs = customer as KeyValuePair<string, PetOwner>[] ?? customer.ToArray();
-            Console.WriteLine(customer.GetEnumerator().Current.Value.FirstName);
-            var test = customer.GetEnumerator().Current.Value.OwnerAnimals;
-            
-            foreach (var pet in test)
-            {
-                Console.WriteLine(pet.Name);
-            }
-            foreach (var pet in keyValuePairs)
-            {
-                foreach (var animal in pet.Value.OwnerAnimals)
-                {
-                    Console.WriteLine(animal.Name);
-                }
-            }
-
-            foreach (var animal in keyValuePairs)
-            {
-                Console.WriteLine(animal.Value.OwnerAnimals[0].Name);
-                Console.WriteLine(animal.Value.OwnerAnimals[1].Name);
-            }
-
-            Console.ReadKey();
-
         }
     }
 }

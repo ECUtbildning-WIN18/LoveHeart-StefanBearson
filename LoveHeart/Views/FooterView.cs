@@ -19,7 +19,7 @@ namespace LoveHeart.Views
             Tools.WriteAt(0, 19, $"A StefanBearson Solution", ConsoleColor.DarkRed);
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(0,2);
-            Program.speak = true;
+            Program.speak = false;
         }
     }
 }
