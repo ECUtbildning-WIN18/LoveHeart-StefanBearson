@@ -19,7 +19,7 @@ namespace LoveHeart
 
         static void Main(string[] args)
         {
-            Testar();
+            //Testar();
 
             PetOwnerInitDB.AddPetOwners();
             PetInitDB.addingPetsToOwners();
@@ -36,12 +36,9 @@ namespace LoveHeart
 
             foreach (var customer in customers)
             {
-                Console.WriteLine($"{customer.FirstName} {customer.LastName} is a Customer!");
-                foreach (var pets in customer.OwnerAnimals)
-                {
-                    Console.WriteLine($"\t{pets.Name}");
+                CustomerSaver.Save(customer);
+                CustomerSaver.customerlist.Save("CustomersTemp.xml");
                 }
-            }
             Console.ReadKey();
         }
     }

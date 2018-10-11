@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LoveHeart.Actions;
 using LoveHeart.Domain;
+using LoveHeart.Services;
 
 namespace LoveHeart.Views
 {
@@ -45,8 +46,10 @@ namespace LoveHeart.Views
                 }
                 else
                 {
+                    
                     PetOwner petowner = new PetOwner(firstName, lastName, socialSecutityNumber);
                     Program.customers.Add(petowner.SocialSecurityNumber, petowner);
+                    //CustomerSaver.AddOneAndSave(petowner);
                     RecRegisterPetView.PetRegView(petowner);
                 }
             }

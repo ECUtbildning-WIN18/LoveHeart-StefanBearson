@@ -17,12 +17,12 @@ namespace LoveHeart.Domain
 
         
 
-        public Pet(string name, string nickName, string typeOfAnimal, DateTime birthday)
+        public Pet(string name, string nickName, string typeOfAnimal)
         {
             Name = name;
             NickName = nickName;
             TypeOfAnimal = typeOfAnimal;
-            Birthday = birthday;
+            
         }
     }
 }

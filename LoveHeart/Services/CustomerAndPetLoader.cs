@@ -32,7 +32,7 @@ namespace LoveHeart.Services
                 {
 
                     var petName = pet.Attribute("name").Value;
-                    petList.Add(new Pet(petName, "ollo", "dog", new DateTime(2009,01,01)));
+                    petList.Add(new Pet(petName, "ollo", "dog"));
                     
                     
                 }

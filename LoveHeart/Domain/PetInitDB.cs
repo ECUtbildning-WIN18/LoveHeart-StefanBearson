@@ -10,11 +10,11 @@ namespace LoveHeart.Domain
     {
         public static void addingPetsToOwners()
         {
-            Pet p1 = new Pet("Fiddo", "Fidde", "Dog", new DateTime(2018-01-01));
-            Pet p2 = new Pet("Freaky", "Crazy mother f%¤#er", "Dog", new DateTime(2018 - 01 - 01));
-            Pet p3 = new Pet("Piller", "Bengt-Göran", "Cat", new DateTime(2018 - 01 - 01));
-            Pet p4 = new Pet("Kissen", "Pjurre", "Cat", new DateTime(2018 - 01 - 01));
-            Pet p5 = new Pet("Ludde", "Ludde", "Dinasure", new DateTime(2018 - 01 - 01));
+            Pet p1 = new Pet("Fiddo", "Fidde", "Dog");
+            Pet p2 = new Pet("Freaky", "Crazy mother f%¤#er", "Dog");
+            Pet p3 = new Pet("Piller", "Bengt-Göran", "Cat");
+            Pet p4 = new Pet("Kissen", "Pjurre", "Cat");
+            Pet p5 = new Pet("Ludde", "Ludde", "Dinasure");
 
             p1.Notes.Add("Testar1");
             p1.Notes.Add("Testar 2");

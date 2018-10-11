@@ -62,6 +62,7 @@
     <Compile Include="Services\AuthenticationService.cs" />
     <Compile Include="Services\CustomerAndPetLoader.cs" />
     <Compile Include="Services\CustomerLoader.cs" />
+    <Compile Include="Services\CustomerSaver.cs" />
     <Compile Include="Services\IAuthenticationService.cs" />
     <Compile Include="Services\ICustomerLoader.cs" />
     <Compile Include="Services\IUserLoader.cs" />
@@ -83,7 +84,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Customers.xml" />
+    <Content Include="Customers.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="CustomerAndPets.xml" />
     <Content Include="Users.xml" />
   </ItemGroup>

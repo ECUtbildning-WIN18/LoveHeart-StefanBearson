@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LoveHeart.Actions;
 using LoveHeart.Domain;
+using LoveHeart.Services;
 
 namespace LoveHeart.Views
 {
@@ -32,16 +33,14 @@ namespace LoveHeart.Views
             Console.ForegroundColor = ConsoleColor.Blue;
             string typeOfAnimal = Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.White;
-            Tools.WriteAt(Config.fromBorder, 10, "Date of birth (yyyy-mm-dd):");
-            Console.ForegroundColor = ConsoleColor.Blue;
-            DateTime birthdate = Convert.ToDateTime(Console.ReadLine());
-            Console.ForegroundColor = ConsoleColor.White;
             Tools.IsThisCorrectTextLower();
             char correct = Console.ReadKey().KeyChar;
 
             if (correct == 'y' || correct == 'Y')
             {
-                petowner.OwnerAnimals.Add(new Pet(name,nickname, typeOfAnimal, birthdate));
+                petowner.OwnerAnimals.Add(new Pet(name,nickname, typeOfAnimal));
+                Pet pet = new Pet(name, nickname, typeOfAnimal);
+                CustomerSaver.AddOneAndSave(petowner, pet);
                 RecMenu.MenuView();
             }
             else
