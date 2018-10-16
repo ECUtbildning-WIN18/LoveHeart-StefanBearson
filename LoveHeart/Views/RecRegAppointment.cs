@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Linq;
+using LoveHeart.Actions;
+using LoveHeart.Domain;
+using LoveHeart.Services;
 
 namespace LoveHeart.Views
 {
@@ -7,63 +10,40 @@ namespace LoveHeart.Views
     {
         public static void addAppointment()
         {
-            //TODO: Console.WriteLine to Tools.WriteAt...
             Console.Clear();
             HeaderView.Header();
             FooterView.Footer();
 
-            Console.WriteLine("Register Appointment");
-            Console.WriteLine();
-            Console.WriteLine("Pet name:");
-            string petName = Console.ReadLine();
+            Tools.WriteAt(Config.fromBorder, 3, "Register Appointment");
 
-            if (Program.customers.Any(custemor => custemor.Value.OwnerAnimals.Any(pet => pet.Name.Contains(petName))))
-            {
-                Console.WriteLine("Reason:");
-                string addNote = Console.ReadLine();
-                ListVets();
-                Console.WriteLine("Veterainarian (first name): ");
-                string vetName = Console.ReadLine();
-                //var myKey = types.FirstOrDefault(x => x.Value == "one").Key;
-                string vetId = Program.vets.FirstOrDefault(name => name.FirstName == vetName).VetId;
-                if (Program.vets.Any(vet => vet.FirstName == vetName))
-                {
-                    Console.WriteLine("Date (yyyy-mm-dd hh:mm):");
-                    DateTime dateTime = Convert.ToDateTime(Console.ReadLine());
-                    if (Program.vets.Any(time => time.schedule.ContainsKey(dateTime)))
-                    {
-                        Console.Clear();
-                        Console.WriteLine("Not free!");
-                        Console.ReadKey();
-                    }
-                    else
-                    {
-                        foreach (var vet in Program.vets)
-                        {
-                            foreach (var owner in Program.customers.Values)
-                            {
-                                foreach (var pet in owner.OwnerAnimals)
-                                {
-                                    if (pet.Name == petName)
-                                    {
-                                        pet.Notes.Add(addNote);
-                                    }
-                                }
-                            }
-                            vet.schedule.Add(dateTime, petName);
-                            RecMenu.MenuView();
-                        }
-                    }
-                }
-                else
-                {
-                    Console.Clear();
-                    Console.WriteLine("Vet do not exist");
-                    Console.ReadKey();
-                    addAppointment();
-                }
-            }
-            Console.ReadKey();
+            Tools.WriteAt(Config.fromBorder, 5, "Customer name:");
+            Tools.WriteAt(Config.fromBorder, 6, "Customers pet name:");
+            Tools.WriteAt(Config.fromBorder, 7, "Vet Name: ");
+            Tools.WriteAt(Config.fromBorder, 8, "Notes: ");
+
+            Console.SetCursorPosition(Config.fromBorder + 15, 5);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            string name = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.SetCursorPosition(Config.fromBorder + 20, 6);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            string petName = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.SetCursorPosition(Config.fromBorder + 10, 7);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            string vetName = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.SetCursorPosition(Config.fromBorder + 7, 8);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            string note = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.White;
+
+            var appointemnet = new Appointment(vetName, petName, petName, note);
+            AppointmentSaver.AddOneAndSave(appointemnet);
+
             RecMenu.MenuView();
         }
 

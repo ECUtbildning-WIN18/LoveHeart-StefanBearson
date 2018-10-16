@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LoveHeart.Actions;
+using System;
 
 namespace LoveHeart.Views
 {
@@ -13,8 +10,12 @@ namespace LoveHeart.Views
             Console.Clear();
             HeaderView.Header();
             FooterView.Footer();
-            Console.WriteLine("vet menu");
+
+            Tools.WriteAt(Config.fromBorder, 3, "Vet Menu");
+            Tools.WriteAt(Config.fromBorder, 4, "Not jet ready!");
+            Tools.WriteAt(Config.fromBorder, 6, "Press any key to go back to login!", ConsoleColor.DarkRed);
             Console.ReadKey();
+            LogIn.View();
         }
     }
 }

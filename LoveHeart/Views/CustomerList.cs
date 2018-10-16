@@ -1,7 +1,8 @@
-﻿using LoveHeart.Services;
+﻿using LoveHeart.Actions;
+using LoveHeart.Domain;
+using LoveHeart.Services;
 using System;
 using System.Collections.Generic;
-using LoveHeart.Domain;
 
 namespace LoveHeart.Views
 {
@@ -25,14 +26,16 @@ namespace LoveHeart.Views
 
         public static void PrintToView(List<PetOwner> customers)
         {
+            int row = 3;
             foreach (var customer in customers)
             {
-                Console.WriteLine($"{customer.FirstName} {customer.LastName} : {customer.SocialSecurityNumber}");
-
+                Tools.WriteAt(Config.fromBorder, row, $"{customer.FirstName} {customer.LastName} : {customer.SocialSecurityNumber}", ConsoleColor.DarkYellow);
+                row++;
                 foreach (var pet in customer.OwnerAnimals)
                 {
-
-                    Console.WriteLine($"\t{pet.Name} is a {pet.TypeOfAnimal}");
+                    Tools.WriteAt(Config.fromBorder, row, $"  {pet.Name}:", ConsoleColor.DarkGray);
+                    Tools.WriteAt(Config.fromBorder + 30, row, $"  {pet.TypeOfAnimal}", ConsoleColor.DarkGray);
+                    row++;
                 }
             }
         }

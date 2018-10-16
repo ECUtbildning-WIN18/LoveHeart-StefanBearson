@@ -1,5 +1,6 @@
 ﻿using LoveHeart.Actions;
 using System;
+using LoveHeart.Services;
 
 namespace LoveHeart.Views
 {
@@ -11,25 +12,20 @@ namespace LoveHeart.Views
             Console.SetBufferSize(80, 3000);
             Console.CursorVisible = false;
 
-            int row = 1;
+            AppointmentLoader loader = new AppointmentLoader();
+            var appointments = loader.LoadAppointments();
 
-            foreach (var vets in Program.vets)
+            int row = 3;
+
+            foreach (var appointment in appointments)
             {
-                Tools.WriteAt(0, row, "######################################");
+                Tools.WriteAt(Config.fromBorder, row, $"{appointment.Vet}", ConsoleColor.Yellow);
+                Tools.WriteContinue($", {appointment.PetOwner}, {appointment.Pet}", ConsoleColor.DarkYellow);
                 row++;
-                Tools.WriteAt(1, row, $"{vets.FirstName} {vets.LastName}", ConsoleColor.Blue);
+                Tools.WriteAt(Config.fromBorder, row, $"{appointment.Note}", ConsoleColor.DarkYellow);
                 row++;
-                Tools.WriteAt(0, row, "--------------------------------------");
-                row++;
-                foreach (var t in vets.schedule)
-                {
-                    Tools.WriteAt(1, row, $"  {t.Key} \t {t.Value}");
-                    row++;
-                }
-                Tools.WriteAt(0, row, "######################################");
-                Console.WriteLine();
             }
-
+            
             Console.SetCursorPosition(0, 0);
             Console.ReadKey();
             Console.CursorVisible = true;

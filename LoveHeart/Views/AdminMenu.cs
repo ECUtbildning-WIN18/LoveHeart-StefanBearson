@@ -1,4 +1,5 @@
 ﻿using System;
+using LoveHeart.Actions;
 
 namespace LoveHeart.Views
 {
@@ -9,9 +10,13 @@ namespace LoveHeart.Views
             Console.Clear();
             HeaderView.Header();
             FooterView.Footer();
-            Console.WriteLine();
-            Console.WriteLine("admin menu");
+            
+            Tools.WriteAt(Config.fromBorder, 3, "Admin menu");
+            Tools.WriteAt(Config.fromBorder, 4, "Not jet ready!");
+            Tools.WriteAt(Config.fromBorder, 6, "Press any key to go back to login!", ConsoleColor.DarkRed);
+
             Console.ReadKey();
+            LogIn.View();
         }
     }
 }

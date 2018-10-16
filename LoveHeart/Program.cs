@@ -19,6 +19,7 @@ namespace LoveHeart
 
         static void Main(string[] args)
         {
+            Console.Title = "Love Heart";
             PetOwnerInitDB.AddPetOwners();
             PetInitDB.addingPetsToOwners();
             VetInitDB.AddVets();
